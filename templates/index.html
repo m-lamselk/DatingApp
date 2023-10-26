@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Dating App{% endblock %}
+
+{% block content %}
+    <h1>Welcome</h1>
+
+    {% for profile in profiles %}
+
+        <h3>Full name: {{ profile.first_name }} {{ profile.last_name }}</h3>
+
+        {% if profile.gender == 0 %}
+            <p>Gender: Male</p>
+
+        {% elif profile.gender == 1 %}
+            <p>Gender: Female</p>
+
+        {% else %}
+            <p>Gender: Other</p>
+        {% endif %}
+
+        <p>Age: {{ profile.age }}</p>
+    {% endfor %}
+
+{% endblock %}
